@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --red: rgba(155, 34, 38, 1);
+  --gray: rgb(27, 26, 26);
+  --white: rgb(240, 237, 229);
+
+  --font-size-s: 16px;
+  --font-size-m: 18px;
+  --font-size-l: 20px;
+  --font-size-xl: 25px;
+
+  --font-family-orbitron: "Orbitron", serif;
+  --font-family-roboto: "Roboto Flex", serif;
+  --input-padding: 10px;
+  --input-margin-bottom: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-roboto);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--gray);
+  min-height: 100vh;
+}
+
+header {
+  background-color: #003b5b;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--font-family-orbitron);
+  color: var(--white);
+  font-size: var(--font-size-xl);
+}
+
+.container {
+  width: 70%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #003b5b;
+  color: var(--black);
+  margin-top: 3%;
+}
+
+.topform {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--input-margin-bottom);
+}
+
+/* Keep original styling for #dataInscricao */
+#dataInscricao {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  vertical-align: bottom;
+  text-align: center;
+  padding: 0;
+  padding-inline-start: 0;
+  border-radius: 0;
+  font-family: var(--font-family-orbitron);
+  color: var(--white);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+}
+
+/* Style for ALL OTHER inputs */
+input:not(#dataInscricao),
+select {
+  width: 100%;
+  padding: var(--input-padding);
+  margin-bottom: var(--input-margin-bottom);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+label {
+  padding-left: 2px;
+  padding-bottom: 0.5%;
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-s);
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+input:not(#dataInscricao),
+select {
+  margin-top: 5px;
+}
+
+#healthInsuranceFields {
+  margin-top: 3%;
+}
+
+.plano {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--input-margin-bottom);
+}
+
+.subcontainerTopic {
+  width: 48%;
+}
+
+
+button[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Media query for smaller screens (adjust breakpoint as needed) */
+@media (max-width: 768px) { /* Adjust 768px to your desired breakpoint */
+  .basicInfo,
+  .subcontainer {
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%; /* Take full width */
+  }
+  .inputOrg_left,
+  .inputOrg_right {
+    width: 100%; /* Take full width */
+    margin-right: 0; /* Remove margin */
+  }
+  .subcontainerTopic {
+    width: 100%; /* Take full width */
+  }
+  .container {
+    width: 90%; /* Adjust container width for smaller screens */
+  }
+}
